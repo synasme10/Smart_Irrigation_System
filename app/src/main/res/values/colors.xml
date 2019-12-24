@@ -3,8 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="background">#2B2B49</color>
-
+    <color name="backgrounsd">#2B2B49</color>
+    <color name="background">#43A047</color>
     <color name="textfield">#353552</color>
     <color name="textfieldfont">#A5A4Af</color>
     <color name="bgdarker">#24243e</color>
