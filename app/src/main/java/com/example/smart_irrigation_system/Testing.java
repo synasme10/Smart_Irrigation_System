@@ -28,45 +28,45 @@ public class Testing extends AppCompatActivity {
         setContentView(R.layout.activity_testing);
 
 
-        mvalueView= findViewById(R.id.tvtest);
-        ettest=findViewById(R.id.ettest);
-        ettestadd=findViewById(R.id.ettestadd);
-        btnadd=findViewById(R.id.btnadd);
-
-
-        btnadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                 myapp();
-            }
-        });
-
-        mRef= FirebaseDatabase.getInstance().getReference();
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-        DatabaseReference myReft=database.getReference("soilmoisture");
-        myReft.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                status=dataSnapshot.getValue().toString();
-                mvalueView.setText(status);
-            }
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-
-
-
-    }
-
-    private void myapp() {
-                        FirebaseDatabase database=FirebaseDatabase.getInstance();
-                DatabaseReference myReft=database.getReference("LED_STATUS");
-                myReft.setValue(1);
+//        mvalueView= findViewById(R.id.tvtest);
+//        ettest=findViewById(R.id.ettest);
+//        ettestadd=findViewById(R.id.ettestadd);
+//        btnadd=findViewById(R.id.btnadd);
+//
+//
+//        btnadd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                 myapp();
+//            }
+//        });
+//
+//        mRef= FirebaseDatabase.getInstance().getReference();
+//        FirebaseDatabase database=FirebaseDatabase.getInstance();
+//        DatabaseReference myReft=database.getReference("soilmoisture");
+//        myReft.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                status=dataSnapshot.getValue().toString();
+//                mvalueView.setText(status);
+//            }
+//
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//
+//
+//
+//
+//    }
+//
+//    private void myapp() {
+//                        FirebaseDatabase database=FirebaseDatabase.getInstance();
+//                DatabaseReference myReft=database.getReference("LED_STATUS");
+//                myReft.setValue(1);
     }
 }

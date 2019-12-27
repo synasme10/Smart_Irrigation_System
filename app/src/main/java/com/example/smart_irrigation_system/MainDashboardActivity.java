@@ -24,15 +24,11 @@ import java.util.Map;
 public class MainDashboardActivity extends AppCompatActivity {
 
     TextView txttempt,txtsoil,txtdistance,txthumidity,txtdistresult,tvtempdate,tvhumiditydate,tvsoildate;
-    LinearLayout image;
-    private String humidity,temperature,soil,distance;
+    LinearLayout image,Cvusercontrol;
+    private String humidity,temperature,soil,distance,date;
     private FirebaseAuth mAuth;
     CardView CvRefresh;
     private DatabaseReference mDatabase;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +45,14 @@ public class MainDashboardActivity extends AppCompatActivity {
         tvtempdate=findViewById(R.id.Tvtemperaturedate);
         tvhumiditydate=findViewById(R.id.Tvhumiditydate);
         tvsoildate=findViewById(R.id.Tvsoilmoisturedate);
+        Cvusercontrol=findViewById(R.id.Cvusercontrol);
+
+        Cvusercontrol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserControl();
+            }
+        });
 
         CvRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +82,7 @@ public class MainDashboardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 distance=dataSnapshot.getValue().toString();
-                txtdistance.setText("Water Level: "+distance+"cm Down");
+                txtdistance.setText("Water Level: "+distance+"cm");
 
                 int dis=Integer.parseInt(distance);
 
@@ -129,6 +133,27 @@ public class MainDashboardActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+        DatabaseReference myReft4=database.getReference("date");
+        myReft4.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                date=dataSnapshot.getValue().toString();
+                tvhumiditydate.setText(date);
+                tvsoildate.setText(date);
+                tvtempdate.setText(date);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void UserControl() {
+        Intent intent=new Intent(MainDashboardActivity.this,WateringControlActivity.class);
+        startActivity(intent);
+
     }
 
     private void refresh() {

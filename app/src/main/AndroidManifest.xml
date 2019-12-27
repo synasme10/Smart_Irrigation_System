@@ -16,12 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Testing">
+        <activity android:name=".WateringControlActivity">
 
         </activity>
-        <activity android:name=".Test">
-
-        </activity>
+        <activity android:name=".Testing"></activity>
+        <activity android:name=".Test"></activity>
         <activity android:name=".MainDashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
