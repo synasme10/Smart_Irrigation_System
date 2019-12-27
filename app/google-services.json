@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "463692772043",
-    "firebase_url": "https://smartirrigationsystem-aaea7.firebaseio.com",
-    "project_id": "smartirrigationsystem-aaea7",
-    "storage_bucket": "smartirrigationsystem-aaea7.appspot.com"
+    "project_number": "1020047874132",
+    "firebase_url": "https://smart-irrigation-system-444f8.firebaseio.com",
+    "project_id": "smart-irrigation-system-444f8",
+    "storage_bucket": "smart-irrigation-system-444f8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:463692772043:android:6fe034805b792d5049214e",
+        "mobilesdk_app_id": "1:1020047874132:android:86d8f9afc0f7add4e875c1",
         "android_client_info": {
           "package_name": "com.example.smart_irrigation_system"
         }
       },
       "oauth_client": [
         {
-          "client_id": "463692772043-1ckqqn6hifcrtr8iqtctc3rf651d9871.apps.googleusercontent.com",
+          "client_id": "1020047874132-k85v8v160jkulni48t8u1p9fa5durhum.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.smart_irrigation_system",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "463692772043-053dvmbqv0ntojt10ipma48ml8psti63.apps.googleusercontent.com",
+          "client_id": "1020047874132-sgplto0scimtr64r712746m2308co75c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB20uAoRSMKC3br8N42VHCEx7aCNj6nog0"
+          "current_key": "AIzaSyBHAKeuPiSWjbpwp9qbd3V8qcLAg_2M8zw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "463692772043-053dvmbqv0ntojt10ipma48ml8psti63.apps.googleusercontent.com",
+              "client_id": "1020047874132-sgplto0scimtr64r712746m2308co75c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
