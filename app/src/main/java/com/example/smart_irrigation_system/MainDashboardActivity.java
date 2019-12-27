@@ -1,9 +1,13 @@
 package com.example.smart_irrigation_system;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +23,13 @@ import java.util.Map;
 
 public class MainDashboardActivity extends AppCompatActivity {
 
-    TextView txttempt,txtsoil,txtdistance,txthumidity;
+    TextView txttempt,txtsoil,txtdistance,txthumidity,txtdistresult,tvtempdate,tvhumiditydate,tvsoildate;
+    LinearLayout image;
     private String humidity,temperature,soil,distance;
     private FirebaseAuth mAuth;
+    CardView CvRefresh;
     private DatabaseReference mDatabase;
+
 
 
 
@@ -36,6 +43,19 @@ public class MainDashboardActivity extends AppCompatActivity {
         txttempt=findViewById(R.id.tvtemp);
         txtsoil=findViewById(R.id.tvsoil);
         txtdistance=findViewById(R.id.tvdist);
+        txtdistresult=findViewById(R.id.tvdistresult);
+        image=findViewById(R.id.distimage);
+        CvRefresh=findViewById(R.id.CvRefresh);
+        tvtempdate=findViewById(R.id.Tvtemperaturedate);
+        tvhumiditydate=findViewById(R.id.Tvhumiditydate);
+        tvsoildate=findViewById(R.id.Tvsoilmoisturedate);
+
+        CvRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refresh();
+            }
+        });
 
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -58,7 +78,25 @@ public class MainDashboardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 distance=dataSnapshot.getValue().toString();
-                txtdistance.setText(distance);
+                txtdistance.setText("Water Level: "+distance+"cm Down");
+
+                int dis=Integer.parseInt(distance);
+
+                if (dis<=5)
+                {
+                    txtdistresult.setText("Tank is full");
+                    image.setBackgroundResource(R.drawable.green);
+                }
+                else if (dis<=10 && dis>=5)
+                {
+                    txtdistresult.setText("Tank is half Empty");
+                    image.setBackgroundResource(R.drawable.yellow);
+                }
+                else
+                {
+                    txtdistresult.setText("Tank is Empty");
+                    image.setBackgroundResource(R.drawable.red);
+                }
             }
 
             @Override
@@ -93,8 +131,13 @@ public class MainDashboardActivity extends AppCompatActivity {
         });
     }
 
-
-
+    private void refresh() {
+        Intent intent=new Intent(MainDashboardActivity.this,MainDashboardActivity.class);
+        startActivity(intent);
+        finish();
     }
+
+
+}
 
 
