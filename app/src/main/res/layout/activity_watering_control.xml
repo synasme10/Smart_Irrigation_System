@@ -11,12 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/btnback"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/backbutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"/>
     <ImageView
         android:id="@+id/turnonpump"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/turnon"
-        android:layout_marginTop="80dp"
+        android:layout_below="@+id/btnback"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="10dp"/>
@@ -35,7 +44,8 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/turnoff"
-        android:layout_marginTop="80dp"
+        android:layout_below="@+id/btnback"
+
         android:layout_marginBottom="10dp"
         android:layout_toRightOf="@+id/turnonpump"
         />
@@ -50,11 +60,31 @@
         android:textSize="19dp"
         android:layout_marginLeft="80dp"/>
 
+        <ImageView
+            android:layout_marginTop="18dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/tvturnoff"
+            android:id="@+id/watering"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/water2"
+            />
+
+        <TextView
+            android:id="@+id/tvwatering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watering"
+            android:text="Turn On for Watering"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/tvturnon"/>
     <ImageView
         android:id="@+id/field"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="970px"
         android:layout_alignParentBottom="true"
+
 
         />
     </RelativeLayout>

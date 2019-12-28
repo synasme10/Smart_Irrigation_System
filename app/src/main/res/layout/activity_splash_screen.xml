@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity"
-    android:background="@color/background">
+    android:background="@drawable/gradientkye">
 
     <ImageView
         android:id="@+id/logo"
@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:padding="40dp"
         android:layout_marginBottom="10dp"
-     android:src="@drawable/watering"
+     android:src="@drawable/waterplant"
      />
 
 

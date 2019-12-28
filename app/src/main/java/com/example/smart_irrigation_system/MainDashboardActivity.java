@@ -24,7 +24,7 @@ import java.util.Map;
 public class MainDashboardActivity extends AppCompatActivity {
 
     TextView txttempt,txtsoil,txtdistance,txthumidity,txtdistresult,tvtempdate,tvhumiditydate,tvsoildate;
-    LinearLayout image,Cvusercontrol;
+    LinearLayout image,Cvusercontrol,Cvlightcontrol;
     private String humidity,temperature,soil,distance,date;
     private FirebaseAuth mAuth;
     CardView CvRefresh;
@@ -46,6 +46,14 @@ public class MainDashboardActivity extends AppCompatActivity {
         tvhumiditydate=findViewById(R.id.Tvhumiditydate);
         tvsoildate=findViewById(R.id.Tvsoilmoisturedate);
         Cvusercontrol=findViewById(R.id.Cvusercontrol);
+        Cvlightcontrol=findViewById(R.id.Cvlightcontrol);
+
+        Cvlightcontrol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LightControl();
+            }
+        });
 
         Cvusercontrol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +156,11 @@ public class MainDashboardActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+    }
+
+    private void LightControl() {
+        Intent intent=new Intent(MainDashboardActivity.this,LightControlActivity.class);
+        startActivity(intent);
     }
 
     private void UserControl() {

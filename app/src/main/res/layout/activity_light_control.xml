@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LightControlActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/btnlightback"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/backbutton"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:id="@+id/turnonlight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/turnon"
+            android:layout_below="@+id/btnlightback"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tvturnon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/turnonlight"
+            android:text="TURN ON"
+            android:textSize="19dp"
+            android:layout_marginLeft="80dp"/>
+
+        <ImageView
+            android:id="@+id/turnofflight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/turnoff"
+            android:layout_below="@+id/btnlightback"
+
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/turnonlight"
+            />
+
+        <TextView
+            android:id="@+id/tvturnoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/turnofflight"
+            android:layout_toRightOf="@+id/tvturnon"
+            android:text="TURN OFF"
+            android:textSize="19dp"
+            android:layout_marginLeft="80dp"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/bulb"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:layout_below="@+id/turnonlight"
+            android:layout_marginTop="40dp"
+
+
+            />
+    </RelativeLayout>
+</LinearLayout>
